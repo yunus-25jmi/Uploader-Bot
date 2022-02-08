@@ -17,7 +17,7 @@ from plugins.main import Translation
 from plugins.thumbnail import *
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 from pyrogram.types import InputMediaPhoto
-from .functions.display_progress import progress_for_pyrogram, humanbytes
+from plugins.functions.display_progress import progress_for_pyrogram, humanbytes
 # https://stackoverflow.com/a/37631799/4723940
 
 from PIL import Image
