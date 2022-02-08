@@ -20,11 +20,11 @@
 
 * `DATABASE_URL`
 
-* `OWNER_ID` - Bot owner `UserId`
+* `OWNER_ID` - `Bot owner` `UserId`
 
-* `FORCESUB_UN` - Too Bee added Soon.
+* `FORCESUB_UN` - `Too Bee added Soon`.
 
-* `SESSION_NAME` - Any Name In Capital Letter Without Space
+* `SESSION_NAME` - `Any Name In Capital Letter Without Space`
                
 𝙾𝚆𝙽𝙴𝚁_𝙲𝙾𝙼𝙼𝙰𝙽𝙳𝚂 :
   
