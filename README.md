@@ -31,4 +31,5 @@
 </h1>
 
 
-<p align="left"><a href="https://heroku.com/deploy"><img src="https://img.shields.io/badge/Deploy%20To%20Heroku-black?style=for-the-badge&logo=heroku&show_icons=true&theme=dracula&hide_border=true "></a></p>
+
+<p align="left"><a href="https://heroku.com/deploy"><img src="https://img.shields.io/badge/Deploy%20To%20Heroku-black?style=for-the-badge&logo=heroku"></a></p>
