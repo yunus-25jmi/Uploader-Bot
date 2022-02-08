@@ -20,9 +20,9 @@
 
 * `DATABASE_URL`
 
-* `OWNER_ID` - `Bot owner` `UserId`
+* `OWNER_ID`
 
-* `SESSION_NAME` - `Any Name In Capital Letter Without Space`
+* `SESSION_NAME`
                
 𝙾𝚆𝙽𝙴𝚁_𝙲𝙾𝙼𝙼𝙰𝙽𝙳𝚂 :
   
