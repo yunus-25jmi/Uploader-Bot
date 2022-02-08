@@ -32,4 +32,6 @@
 
 
 
-<p align="left"><a href="https://heroku.com/deploy"><img src="https://img.shields.io/badge/Deploy%20To%20Heroku-yellow?style=for-the-badge&logo=heroku"
+<p align="left"><a href="https://heroku.com/deploy?template=https://github.com/Tellybots/The-Encoder-Bot">
+    <img src="https://github.com/nikhileashy/justfor_testing/blob/main/herokudeploy-01-cropped.svg" alt="herokudeploy-01" border="0" height="100" width="240"></a>
+</p>
