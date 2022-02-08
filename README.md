@@ -10,7 +10,8 @@
 <p><a href="https://t.me/Tellybots"> <img src="https://img.shields.io/badge/Telegram-Join%20Channel-gold?style=for-the-badge&logo=telegram" width="220""/></a></p>
 
   
-Variables required are:
+𝚁𝚎𝚚𝚞𝚒𝚛𝚎𝚍 𝚅𝚊𝚛𝚒𝚊𝚋𝚕𝚎𝚜 🔊
+
 * `APP_ID`
 
 * `API_HASH`
@@ -25,7 +26,7 @@ Variables required are:
 
 * `SESSION_NAME` - Any Name In Capital Letter Without Space
                
-OWNER COMMANDS:
+𝙾𝚆𝙽𝙴𝚁_𝙲𝙾𝙼𝙼𝙰𝙽𝙳𝚂 :
   
   - `/status` : count total users
   - `/broadcast` : Reply to any kind of message to broadcast it
