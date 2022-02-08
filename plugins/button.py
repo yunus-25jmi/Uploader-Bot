@@ -21,7 +21,7 @@ from plugins.functions.display_progress import progress_for_pyrogram, humanbytes
 # https://stackoverflow.com/a/37631799/4723940
 
 from PIL import Image
-from .functions.ran_text import random_char
+from plugins.functions.ran_text import random_char
 
 async def youtube_dl_call_back(bot, update):
     cb_data = update.data
