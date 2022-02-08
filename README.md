@@ -31,4 +31,4 @@
 </h1>
 
 
-<p align="left"><a href="https://heroku.com/deploy"><img src="https://github-readme-stats.vercel.app/api/pin?username=Tellybots&show_icons=true&theme=dracula&hide_border=true&repo=Zee5-dl-Bot"></a></p>
+<p align="left"><a href="https://heroku.com/deploy"><img src="https://img.shields.io/badge/Deploy%20To%20Heroku-black?style=for-the-badge&logo=heroku"></a></p>
