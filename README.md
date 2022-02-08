@@ -4,8 +4,6 @@
 
 
 <p align="left"><a href="https://github.com/Tellybots/Zee5-Dl-Bot"><img src="https://github-readme-stats.vercel.app/api/pin?username=Tellybots&show_icons=true&theme=dracula&hide_border=true&repo=Zee5-dl-Bot"></a></p>
-  
-<a> <img alt="GitHub pull requests" src="https://img.shields.io/github/issues-pr-raw/tellybots/The-Encoder-Bot?color=blue&label=Open%20PRs"> <img alt="GitHub closed pull requests" src="https://img.shields.io/github/issues-pr-closed-raw/Tellybots/The-Encoder-Bot?color=blue&label=Closed%20PRs"> </a> </p>
 
 <p align="center" > <img alt="GitHub forks" src="https://img.shields.io/github/forks/Tellybots/The-Encoder-Bot?label=%F0%9F%8D%B4Forks&logoColor=blue&style=social">
 <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/Tellybots/The-Encoder-Bot?label=%E2%AD%90%EF%B8%8FStars&logoColor=blue&style=social"> </p>
