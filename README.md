@@ -7,7 +7,7 @@
   
 
 `Telegram Channel` - `Tellybots`
-<p><a href="https://t.me/Tellybots"> <img src="https://img.shields.io/badge/Telegram-Join%20Channel-gold?style=for-the-badge&logo=telegram" width="220""/></a></p>
+<p><a href="https://t.me/Tellybots"> <img src="https://img.shields.io/badge/Telegram-Join%20Channel-black?style=for-the-badge&logo=telegram" width="220""/></a></p>
 
   
 𝚁𝚎𝚚𝚞𝚒𝚛𝚎𝚍 𝚅𝚊𝚛𝚒𝚊𝚋𝚕𝚎𝚜 🔊
