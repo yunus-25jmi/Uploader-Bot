@@ -24,8 +24,6 @@
 
 
 
-<h1 align="center">
-  <b>Deploy To Heroku</b>
-</h1>
+*** Deploy To Heroku ***
 
 <p><a href="https://heroku.com/deploy?template=https://github.com/sahaynitin/leech_x/tree/master)"> <img src="https://img.shields.io/badge/Deploy%20To%20Heroku-Gold?style=for-the-badge&logo=heroku" width="200""/></a></p>
