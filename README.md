@@ -1,11 +1,6 @@
-### 🔊 Zee5-Dl-Bot
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Tellybots/Zee5-Dl-Bot)
-<p align="center">
-  <img src="./LOCAL/Wavy_Lst-14_Single-06.jpg" alt="VideoConvertor poster">
-</p>
 <h1 align="center">
-  <b>ᴠɪᴅᴇᴏ ᴄᴏɴᴠᴇʀᴛᴏʀ</b>
+  <b>𝚉𝚎𝚎5 𝙱𝚘𝚝</b>
 </h1>
 
 
