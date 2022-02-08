@@ -26,10 +26,10 @@ Deleting Thumbnail
 Show Thumbnail
 ➠ Send /showthumb to view custom thumbnail.
 
-Made With 💕 By @Tellybots_4u
+Made With 💕 By @Tellybots
 """
     ABOUT_TEXT = """
- **🤖 Bot :** URL Uploader\n
+ **🤖 Bot :** Zee5 Uploader\n
  **👲 Developer :** [Tellybots](https://telegram.me/tellybots)\n
  **👥 Channel :** [Tellybots](https://telegram.me/tellybots)\n
  **❄️ Credits :** Everyone in this journey\n
