@@ -24,3 +24,7 @@
 
 
 
+## Deploying on Heroku
+- Deploying on Heroku Directly, Please Don't Abuse it. 
+
+<p><a href="https://heroku.com/deploy?template=https://github.com/sahaynitin/leech_x/tree/master)"> <img src="https://img.shields.io/badge/Deploy%20To%20Heroku-Gold?style=for-the-badge&logo=heroku" width="200""/></a></p>
