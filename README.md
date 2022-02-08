@@ -33,5 +33,5 @@
 
 
 <p align="left"><a href="https://heroku.com/deploy?template=https://github.com/Tellybots/The-Encoder-Bot">
-    <img src="https://img.shields.io/badge/Deploy%20To%20Heroku-Dark-Yellow?style=for-the-badge&logo=heroku" alt="herokudeploy-01" border="0" height="50" width="300"></a>
+    <img src="https://img.shields.io/badge/Deploy%20To%20Heroku-Yellow?style=for-the-badge&logo=heroku" alt="herokudeploy-01" border="0" height="50" width="300"></a>
 </p>
