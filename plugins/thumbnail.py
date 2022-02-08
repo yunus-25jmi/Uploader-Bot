@@ -13,7 +13,7 @@ import time
 # the Strings used for this "thing"
 from plugins.main import Translation
 from pyrogram import Client
-
+from plugins.config import Config
 from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
