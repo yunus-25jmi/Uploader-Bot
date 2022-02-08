@@ -23,11 +23,6 @@
 * `OWNER_ID`
 
 * `SESSION_NAME`
-               
-𝙾𝚆𝙽𝙴𝚁_𝙲𝙾𝙼𝙼𝙰𝙽𝙳𝚂 :
-  
-  - `/status` : count total users
-  - `/broadcast` : Reply to any kind of message to broadcast it
 
 
 
