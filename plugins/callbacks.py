@@ -1,12 +1,9 @@
 import os
 
-if bool(os.environ.get("WEBHOOK", False)):
-    from sample_config import Config
-else:
-    from config import Config
+from plugins.config import Config
 
 from plugins.button import youtube_dl_call_back
-from plugins.linkimport ddl_call_back
+from plugins.link import ddl_call_back
 from plugins.main import Translation
 from pyrogram import Client
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
