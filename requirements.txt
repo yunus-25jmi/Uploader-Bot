@@ -1,0 +1,16 @@
+aiohttp
+beautifulsoup4
+hachoir
+numpy
+Pillow
+requests
+olefile
+filetype
+tldextract
+motor
+aiofiles
+dnspython
+psutil
+pyrogram
+tgcrypto
+yt-dlp
