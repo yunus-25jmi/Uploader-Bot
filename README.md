@@ -24,6 +24,8 @@
 
 * `SESSION_NAME`
 
+* ForceSub Added Soon
+
 # 𝚃𝙴𝙻𝙴𝙶𝚁𝙰𝙼 - 𝚃𝙴𝙻𝙻𝚈𝙱𝙾𝚃𝚂
 
 <p align="left">  <a href="https://t.me/Tellybots"> <img src="https://img.shields.io/badge/Telegram-Join My%20Channel-gold?style=for-the-badge&logo=telegram" width="300""/></a></p>
