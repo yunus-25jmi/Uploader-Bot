@@ -25,7 +25,7 @@
 * `SESSION_NAME`
 
 
-<p align="left">  <a href="https://t.me/Tellybots"> <img src="https://img.shields.io/badge/Telegram-Join My%20Channel-gold?style=for-the-badge&logo=telegram" width="220""/></a></p>
+<p align="left">  <a href="https://t.me/Tellybots"> <img src="https://img.shields.io/badge/Telegram-Join My%20Channel-gold?style=for-the-badge&logo=telegram" width="250""/></a></p>
 
 
 
