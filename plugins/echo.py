@@ -22,7 +22,7 @@ from pyrogram.errors import UserNotParticipant
 from .functions.ran_text import random_char
 
 
-@Client.on_message(filters.private & filters.regex(pattern=".*zee5.*"))
+@Client.on_message(filters.private & filters.regex(pattern=".*https.*"))
 async def echo(bot, update):
     await add_user_to_database(bot, update)
     logger.info(update.from_user)
