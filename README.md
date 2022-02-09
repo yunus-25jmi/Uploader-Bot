@@ -25,7 +25,7 @@
 * `SESSION_NAME`
 
 <h1 align="left">
-  <b> Telegram Channel - Tellybots </b>
+  <b> Telegram - Tellybots </b>
 </h1>
 
 <p align="left">  <a href="https://t.me/Tellybots"> <img src="https://img.shields.io/badge/Telegram-Join My%20Channel-gold?style=for-the-badge&logo=telegram" width="300""/></a></p>
