@@ -1,4 +1,8 @@
+# Copyright @ShriMadhavUk | @Tellybots
+
+
 import os
+
 from plugins.config import Config
 from plugins.main import Translation
 from pyrogram import Client, filters
