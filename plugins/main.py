@@ -5,9 +5,9 @@ class Translation(object):
     START_TEXT = """
 Hey {}
 
-I am Telegram Most Powerful Zee5 Link Downloader Bot
+I am Telegram Most Powerful Url Uploader Bot
 
-I can Upload Any Zee5 Link in File or Video except Drm Protected Video
+I can Upload Any Link in File or Video except Drm Protected Links
 
 Use Help Button to Know How to Use me
 
@@ -29,7 +29,7 @@ Show Thumbnail
 Made With 💕 By @Tellybots
 """
     ABOUT_TEXT = """
- **🤖 Bot :** Zee5 Uploader\n
+ **🤖 Bot :** Url Uploader\n
  **👲 Developer :** [Tellybots](https://telegram.me/tellybots)\n
  **👥 Channel :** [Tellybots](https://telegram.me/tellybots)\n
  **❄️ Credits :** Everyone in this journey\n
