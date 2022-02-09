@@ -14,4 +14,3 @@ psutil
 pyrogram
 tgcrypto
 yt-dlp
-$🔊
