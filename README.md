@@ -24,11 +24,6 @@
 
 * `SESSION_NAME`
 
-* ForceSub Added Soon
-
-# 𝚃𝙴𝙻𝙴𝙶𝚁𝙰𝙼 - 𝚃𝙴𝙻𝙻𝚈𝙱𝙾𝚃𝚂
-
-<p align="left">  <a href="https://t.me/Tellybots"> <img src="https://img.shields.io/badge/Telegram-Join My%20Channel-gold?style=for-the-badge&logo=telegram" width="300""/></a></p>
 
 
 
@@ -42,4 +37,4 @@
     <img src="https://img.shields.io/badge/Deploy%20To Heroku-purple?style=for-the-badge&logo=Heroku" alt="herokudeploy-01" border="0" height="40" width="300"></a>
 </p>
 
-## Credit :- @ShriMadhavUk
+
