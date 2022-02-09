@@ -1,5 +1,5 @@
 <h1 align="center">
-  <b> Uploader Bot </b>
+  <b>  </b>
 </h1>
 
 <p align="center" > <img alt="GitHub forks" src="https://img.shields.io/github/forks/Tellybots/Uploader-Bot?label=%F0%9F%8D%B4Forks&logoColor=blue&style=social">
