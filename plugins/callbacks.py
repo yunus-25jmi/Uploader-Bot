@@ -1,3 +1,5 @@
+# © Shrimadhav Uk | @Tellybots
+
 import os
 
 from plugins.config import Config
