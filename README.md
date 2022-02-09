@@ -29,12 +29,12 @@
 
 
 
-<h1 align="center">
+<h1 align="left">
   <b> 𝙳𝙴𝙿𝙻𝙾𝚈 𝙾𝙽 𝙷𝙴𝚁𝙾𝙺𝚄 </b>
 </h1>
 
 
 
-<p align="center"><a href="https://heroku.com/deploy?template=https://github.com/Tellybots/Zee5-dl-Bot">
+<p align="left"><a href="https://heroku.com/deploy?template=https://github.com/Tellybots/Zee5-dl-Bot">
     <img src="https://img.shields.io/badge/Deploy%20To Heroku-purple?style=for-the-badge&logo=Heroku" alt="herokudeploy-01" border="0" height="40" width="250"></a>
 </p>
