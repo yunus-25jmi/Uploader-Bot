@@ -2,11 +2,11 @@
 import os
 import ytthumb
 import requests
-from pyrogram import Client, filters
+from pyrogram import filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, InlineQueryResultPhoto
 from youtubesearchpython import VideosSearch
 
-
+from pyrogram import Client as Bot
 
 
 
