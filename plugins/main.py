@@ -1,5 +1,5 @@
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
-
+from plugins.functions.yt_search import *
 class Translation(object):
 
     START_TEXT = """
