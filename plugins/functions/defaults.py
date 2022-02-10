@@ -1,5 +1,5 @@
-from presets import Presets
-from support.buttons import get_reply_markup
+from functions.presets import Presets
+from functions.display_progress import get_reply_markup
 from pyrogram.types import InlineQueryResultArticle, InputTextMessageContent
 
 async def get_info(username):
