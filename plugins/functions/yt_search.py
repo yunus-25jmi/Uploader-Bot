@@ -3,10 +3,10 @@ import os
 from py_youtube import Data, Search 
 from pyrogram.types import *
 
+from pyrogram import Client
 
 
-
-@app.on_inline_query()
+@Client.on_inline_query()
 async def search_video(client,query):
 	search = []
 	result = Search(query.query.strip()).videos()
