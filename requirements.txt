@@ -15,3 +15,6 @@ pyrogram
 tgcrypto
 yt-dlp
 py-youtube
+requests
+ytthumb
+youtube-search-python
