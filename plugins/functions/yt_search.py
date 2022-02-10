@@ -18,16 +18,7 @@ async def search_video(client,query):
 			data = i["simple_data"]
 		except:
 			pass
-		try:
-			search.append(
-                InlineQueryResultPhoto(
-                    title=title,
-                    description=data,
-                    caption="https://youtu.be/"+id,
-                    photo_url=thumb))
 		
-		except:
-		          pass
             
 	await query.answer(search)
 	
