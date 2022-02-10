@@ -6,7 +6,7 @@ import asyncio
 from pyrogram import Client
 from plugins.functions.presets import Presets
 from plugins.functions.defaults import get_info
-from plugins.pyrogram.errors import FloodWait
+from pyrogram.errors import FloodWait
 from plugins.functions.extract import youtube_search
 from pyrogram.types import InlineQuery, InlineQueryResultArticle, InputTextMessageContent
 
