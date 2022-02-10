@@ -15,7 +15,7 @@ async def search_video(client,query):
 		try:
 			title = i["title"]
 			id = i["id"]
-			#thumb = i["thumb"][0]
+			thumb = i["thumb"][0]
 			data = i["simple_data"]
 		except:
 			pass
@@ -23,9 +23,9 @@ async def search_video(client,query):
 			search.append(
                 InlineQueryResultPhoto(
                     title=title,
-                    description=data,
-                    caption="https://youtu.be/"+id))
-#photo_url=thumb
+                    caption="https://youtu.be/"+id,
+                    photo_url=thumb))
+
 		except:
 		          pass
             
