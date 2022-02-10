@@ -17,10 +17,18 @@ from plugins.config import Config
 @Client.on_inline_query()
 async def inline_search(bot, query: InlineQuery):
 
+    me = []
+    id = query.from_user.id
+    results = []
     #
+    defaults = await get_info(me.username)
+    results.extend(defaults)
+    #
+
     search = query.query.strip()
     string = await youtube_search(search)
     for data in string:
+
         count = data['viewCount']
         thumb = data['thumbnails']
         results.append(
