@@ -1,7 +1,11 @@
 from pyrogram import Client ,filters
 import os
-from py_youtube import Data, Search 
+
 from pyrogram.types import *
+import os
+import ytthumb
+import requests
+from youtubesearchpython import VideosSearch
 
 
 
