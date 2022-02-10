@@ -43,7 +43,7 @@ Made With 💕 By @Tellybots
         InlineKeyboardButton('🤖 Channel', url='https://telegram.me/tellybots'),
         InlineKeyboardButton('💬 Support', url='https://telegram.me/tellybots_support')
         ],[
-        InlineKeyboardButton('🌀 Youtube', switch_inline_query_current_chat=query),
+        InlineKeyboardButton('🌀 Youtube', switch_inline_query_current_chat),
         InlineKeyboardButton('❔ Help', callback_data='help'),
         InlineKeyboardButton('⛔ Close', callback_data='close')
         ]]
