@@ -18,3 +18,10 @@ py-youtube
 requests
 ytthumb
 youtube-search-python
+telethon
+cryptg
+heroku3
+psycopg2
+requests
+telegraph
+flixpy
