@@ -6,13 +6,10 @@ from pyrogram.types import *
 
 
 
-@Client.on_inline_query()
-async def start(client,message):
-	await message.reply_text("Helo iam Youtube Video Search\nUse in inline mode")
 	
 
 
-@app.on_inline_query()
+@Client.on_inline_query()
 async def search_video(client,query):
 	search = []
 	result = Search(query.query.strip()).videos()
