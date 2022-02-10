@@ -5,7 +5,6 @@ import os
 import asyncio
 from pyrogram import Client
 from functions.presets import Presets
-from functions.sqldb import add_user
 from functions.defaults import get_info
 from pyrogram.errors import FloodWait
 from functions.extract import youtube_search
@@ -17,12 +16,7 @@ from plugins.config import Config
 
 @Client.on_inline_query()
 async def inline_search(bot, query: InlineQuery):
-    await add_user(query.from_user.id)
-    me = []
-    try:
-        me = await Client.get_me(bot)
-    except FloodWait as e:
-        await asyncio.sleep(e.x)
+
     id = query.from_user.id
     results = []
     #
