@@ -1,4 +1,5 @@
 aiohttp
+loggers
 beautifulsoup4
 hachoir
 numpy
