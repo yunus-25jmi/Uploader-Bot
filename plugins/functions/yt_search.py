@@ -24,8 +24,9 @@ async def search_video(client,query):
                 InlineQueryResultPhoto(
                     title=title,
                     description=data,
-                    caption="https://youtu.be/"+id))
-		
+                    caption="https://youtu.be/"+id,
+                    photo_url=thumb))
+
 		except:
 		          pass
             
