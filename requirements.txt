@@ -14,3 +14,4 @@ psutil
 pyrogram
 tgcrypto
 yt-dlp
+py-youtube
