@@ -19,7 +19,7 @@ async def inline_search(bot, query: InlineQuery):
 
     results = []
     #
-    results.extend(defaults)
+    
     #
 
     search = query.query.strip()
