@@ -254,8 +254,6 @@ async def echo(bot, update):
         uploaded_date = result['uploadDate']
         thumb = await yt_thumb_dl(thumb_url, m)
     except Exception:
-        await img.edit_caption(Presets.NOT_DOWNLOADABLE)
-        await asyncio.sleep(5)
         await chk.delete(True)
         thumbnail = Config.DEF_THUMB_NAIL_VID_S
         thumbnail_image = Config.DEF_THUMB_NAIL_VID_S
