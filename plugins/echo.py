@@ -244,16 +244,6 @@ async def echo(bot, update):
                 )
             ])
         reply_markup = InlineKeyboardMarkup(inline_keyboard)
-    try:
-        result = await yt_link_search(url)
-        views = result['viewCount']['text']
-        title = result['title'][:25] + ".."
-        link = result['channel']['link']
-        channel = result['channel']['name']
-        rating = round(result['averageRating'], 1) if result['averageRating'] else "N/A"
-        uploaded_date = result['uploadDate']
-        thumb = await yt_thumb_dl(thumb_url, m)
-    except Exception:
         await chk.delete(True)
         thumbnail = Config.DEF_THUMB_NAIL_VID_S
         thumbnail_image = Config.DEF_THUMB_NAIL_VID_S
