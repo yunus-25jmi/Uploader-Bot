@@ -16,7 +16,3 @@ pyrogram
 tgcrypto
 yt-dlp
 
-youtube-search-python
-
-pytube
-wget
