@@ -3,15 +3,13 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 class Translation(object):
 
     START_TEXT = """
-Hey {}
+👋 Hᴇʏ {} ♡
 
-I am Telegram Most Powerful Url Uploader Bot
+I ᴀᴍ Tᴇʟᴇɢʀᴀᴍ Mᴏsᴛ Pᴏᴡᴇʀғᴜʟ Uʀʟ Uᴘʟᴏᴀᴅᴇʀ Bᴏᴛ
 
-I can Upload Any Link in File or Video except Drm Protected Links
+Usᴇ Hᴇʟᴘ Bᴜᴛᴛᴏɴ ᴛᴏ Kɴᴏᴡ Hᴏᴡ ᴛᴏ Usᴇ ᴍᴇ
 
-Use Help Button to Know How to Use me
 
-Made With 💕 By @Tellybots
 """
     HELP_TEXT = """
 Link to Media or File
