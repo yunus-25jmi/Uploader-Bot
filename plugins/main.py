@@ -105,7 +105,7 @@ Pᴏᴡᴇʀᴇᴅ ʙʏ : [Tᴇʟʟʏʙᴏᴛs](https://telegram.me/TellyBots)
     SAVED_RECVD_DOC_FILE = "Document Downloaded Successfully."
     CUSTOM_CAPTION_UL_FILE = " "
     NO_CUSTOM_THUMB_NAIL_FOUND = "Nᴏ ᴄᴜsᴛᴏᴍ ᴛʜᴜᴍʙɴᴀɪʟ ғᴏᴜɴᴅ"
-    NO_VOID_FORMAT_FOUND = "Pʟᴇᴀsᴇ sᴇɴᴅ ᴀ ᴠᴀʟɪᴅ ᴜʀʟ"
+    NO_VOID_FORMAT_FOUND = "ERROR... <code>{}</code>"
     FILE_NOT_FOUND = "Error, File not Found!!"
     USER_ADDED_TO_DB = "User <a href='tg://user?id={}'>{}</a> added to {} till {}."
     SOMETHING_WRONG = "<code>Something Wrong. Try again.</code>"
