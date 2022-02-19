@@ -24,6 +24,7 @@
 
 * `SESSION_NAME`
 
+* `UPDATES_CHANNEL` 
 
 
 
