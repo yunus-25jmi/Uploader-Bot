@@ -26,6 +26,10 @@ from .functions.ran_text import random_char
 async def echo(bot, update):
     await add_user_to_database(bot, update)
     logger.info(update.from_user)
+    if Config.UPDATES_CHANNEL:
+      fsub = await handle_force_subscribe(bot, update)
+      if fsub == 400:
+        return
     url = update.text
     youtube_dl_username = None
     youtube_dl_password = None
