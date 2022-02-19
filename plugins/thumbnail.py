@@ -20,7 +20,7 @@ logging.getLogger("pyrogram").setLevel(logging.WARNING)
 from pyrogram import filters
 from .database.database import db
 from .functions.help_Nekmo_ffmpeg import take_screen_shot
-
+from .functions.forcesub import handle_force_subscribe
 
 @Client.on_message(filters.private & filters.photo)
 async def save_photo(bot, update):
