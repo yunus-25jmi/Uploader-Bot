@@ -49,3 +49,6 @@ class Config(object):
     
     # dict to hold the ReQuest queue
     ADL_BOT_RQ = {}
+
+    SCREENSHOTS = os.environ.get("SCREENSHOTS", "True")
+
