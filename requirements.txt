@@ -15,4 +15,4 @@ psutil
 pyrogram
 tgcrypto
 yt-dlp
-
+ffmpeg
