@@ -21,16 +21,49 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.errors import UserNotParticipant
 from .functions.ran_text import random_char
 
+import logging
+logging.basicConfig(level=logging.DEBUG,
+                    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+logger = logging.getLogger(__name__)
+logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
-@Client.on_message(filters.private & filters.regex(pattern=".*https.*"))
+import os
+import re
+import json
+import math
+import time
+import shutil
+import random
+import ffmpeg
+import asyncio
+import requests
+
+
+@Client.on_message(filters.private & filters.regex(pattern=".*http.*"))
 async def echo(bot, update):
-    await add_user_to_database(bot, update)
-    logger.info(update.from_user)
+    if Config.LOG_CHANNEL:
+        try:
+            log_message = await message.forward(Config.LOG_CHANNEL)
+            log_info = "Message Sender Information\n"
+            log_info += "\nFirst Name: " + update.from_user.first_name
+            log_info += "\nUser ID: " + update.from_user.id
+            if update.from_user.username:
+                log_info += "\nUsername: " + update.from_user.username
+            log_info += "\nUser Link: " + update.from_user.mention
+            await log_message.reply_text(
+                text=log_info,
+                disable_web_page_preview=True,
+                quote=True
+            )
+        except Exception as error:
+            print(error)
+    logger.info(update.from_user.id)
+    fmsg = await update.reply_text(text=Translation.CHECKING_LINK, quote=True)
     url = update.text
+
     youtube_dl_username = None
     youtube_dl_password = None
     file_name = None
-    print(url)
     if "|" in url:
         url_parts = url.split("|")
         if len(url_parts) == 2:
@@ -53,7 +86,6 @@ async def echo(bot, update):
             url = url.strip()
         if file_name is not None:
             file_name = file_name.strip()
-        # https://stackoverflow.com/a/761825/4723940
         if youtube_dl_username is not None:
             youtube_dl_username = youtube_dl_username.strip()
         if youtube_dl_password is not None:
@@ -85,39 +117,31 @@ async def echo(bot, update):
             "-j",
             url
         ]
+    if "hotstar" in url:
+        command_to_exec.append("--geo-bypass-country")
+        command_to_exec.append("IN")
     if youtube_dl_username is not None:
         command_to_exec.append("--username")
         command_to_exec.append(youtube_dl_username)
     if youtube_dl_password is not None:
         command_to_exec.append("--password")
         command_to_exec.append(youtube_dl_password)
-    logger.info(command_to_exec)
-    chk = await bot.send_message(
-            chat_id=update.chat.id,
-            text=f'Processing Your Link ⌛',
-            disable_web_page_preview=True,
-            reply_to_message_id=update.message_id
-          )
     process = await asyncio.create_subprocess_exec(
         *command_to_exec,
-        # stdout must a pipe to be accessible as process.stdout
         stdout=asyncio.subprocess.PIPE,
         stderr=asyncio.subprocess.PIPE,
     )
-    # Wait for the subprocess to finish
     stdout, stderr = await process.communicate()
     e_response = stderr.decode().strip()
-    logger.info(e_response)
+    # logger.info(e_response)
     t_response = stdout.decode().strip()
-    #logger.info(t_response)
-    # https://github.com/rg3/youtube-dl/issues/2630#issuecomment-38635239
+    # logger.info(t_response)
+
     if e_response and "nonnumeric port" not in e_response:
         # logger.warn("Status : FAIL", exc.returncode, exc.output)
         error_message = e_response.replace("please report this issue on https://yt-dl.org/bug . Make sure you are using the latest version; see  https://yt-dl.org/update  on how to update. Be sure to call youtube-dl with the --verbose flag and include its complete output.", "")
         if "This video is only available for registered users." in error_message:
             error_message += Translation.SET_CUSTOM_USERNAME_PASSWORD
-        await chk.delete()
-        time.sleep(1)
         await bot.send_message(
             chat_id=update.chat.id,
             text=Translation.NO_VOID_FORMAT_FOUND.format(str(error_message)),
@@ -127,14 +151,12 @@ async def echo(bot, update):
         )
         return False
     if t_response:
-        # logger.info(t_response)
         x_reponse = t_response
         if "\n" in x_reponse:
             x_reponse, _ = x_reponse.split("\n")
         response_json = json.loads(x_reponse)
-        randem = random_char(5)
         save_ytdl_json_path = Config.DOWNLOAD_LOCATION + \
-            "/" + str(update.from_user.id) + f'{randem}' + ".json"
+            "/" + str(update.from_user.id) + ".json"
         with open(save_ytdl_json_path, "w", encoding="utf8") as outfile:
             json.dump(response_json, outfile, ensure_ascii=False)
         # logger.info(response_json)
@@ -152,24 +174,24 @@ async def echo(bot, update):
                 approx_file_size = ""
                 if "filesize" in formats:
                     approx_file_size = humanbytes(formats["filesize"])
-                cb_string_video = "{}|{}|{}|{}".format(
-                    "video", format_id, format_ext, randem)
-                cb_string_file = "{}|{}|{}|{}".format(
-                    "file", format_id, format_ext, randem)
+                cb_string_video = "{}|{}|{}".format(
+                    "video", format_id, format_ext)
+                cb_string_file = "{}|{}|{}".format(
+                    "file", format_id, format_ext)
                 if format_string is not None and not "audio only" in format_string:
                     ikeyboard = [
                         InlineKeyboardButton(
-                            " Video " + format_string + " " + approx_file_size + " ",
+                            "🎞️ S " + format_string + " video " + approx_file_size + " ",
                             callback_data=(cb_string_video).encode("UTF-8")
                         ),
                         InlineKeyboardButton(
-                            " File " + format_ext + " " + approx_file_size + " ",
+                            "🗂️ D " + format_ext + " " + approx_file_size + " ",
                             callback_data=(cb_string_file).encode("UTF-8")
                         )
                     ]
                     """if duration is not None:
-                        cb_string_video_message = "{}|{}|{}|{}|{}".format(
-                            "vm", format_id, format_ext, ran, randem)
+                        cb_string_video_message = "{}|{}|{}".format(
+                            "vm", format_id, format_ext)
                         ikeyboard.append(
                             InlineKeyboardButton(
                                 "VM",
@@ -178,16 +200,15 @@ async def echo(bot, update):
                             )
                         )"""
                 else:
-                    # special weird case :\
                     ikeyboard = [
                         InlineKeyboardButton(
-                            " Video [" +
+                            "🎞️ SVideo [" +
                             "] ( " +
                             approx_file_size + " )",
                             callback_data=(cb_string_video).encode("UTF-8")
                         ),
                         InlineKeyboardButton(
-                            " File [" +
+                            "🗂️ DFile [" +
                             "] ( " +
                             approx_file_size + " )",
                             callback_data=(cb_string_file).encode("UTF-8")
@@ -195,37 +216,33 @@ async def echo(bot, update):
                     ]
                 inline_keyboard.append(ikeyboard)
             if duration is not None:
-                cb_string_64 = "{}|{}|{}|{}".format("audio", "64k", "mp3", randem)
-                cb_string_128 = "{}|{}|{}|{}".format("audio", "128k", "mp3", randem)
-                cb_string = "{}|{}|{}|{}".format("audio", "320k", "mp3", randem)
+                cb_string_64 = "{}|{}|{}".format("audio", "64k", "mp3")
+                cb_string_128 = "{}|{}|{}".format("audio", "128k", "mp3")
+                cb_string = "{}|{}|{}".format("audio", "320k", "mp3")
                 inline_keyboard.append([
                     InlineKeyboardButton(
-                        " Mp3 " + "(" + "64 kbps" + ")", callback_data=cb_string_64.encode("UTF-8")),
+                        "🎶MP3🎶" + "(" + "64 kbps" + ")", callback_data=cb_string_64.encode("UTF-8")),
                     InlineKeyboardButton(
-                        " Mp3 " + "(" + "128 kbps" + ")", callback_data=cb_string_128.encode("UTF-8"))
+                        "🎶MP3🎶 " + "(" + "128 kbps" + ")", callback_data=cb_string_128.encode("UTF-8"))
                 ])
                 inline_keyboard.append([
                     InlineKeyboardButton(
-                        " Mp3 " + "(" + "320 kbps" + ")", callback_data=cb_string.encode("UTF-8"))
-                ])
-                inline_keyboard.append([                 
-                    InlineKeyboardButton(
-                        "♨️ CLOSE", callback_data='close')               
+                        "🎶MP3🎶 " + "(" + "320 kbps" + ")", callback_data=cb_string.encode("UTF-8"))
                 ])
         else:
             format_id = response_json["format_id"]
             format_ext = response_json["ext"]
-            cb_string_file = "{}|{}|{}|{}".format(
-                "file", format_id, format_ext, randem)
-            cb_string_video = "{}|{}|{}|{}".format(
-                "video", format_id, format_ext, randem)
+            cb_string_file = "{}|{}|{}".format(
+                "file", format_id, format_ext)
+            cb_string_video = "{}|{}|{}".format(
+                "video", format_id, format_ext)
             inline_keyboard.append([
                 InlineKeyboardButton(
-                    "SVideo",
+                    "🎞️ SVideo ",
                     callback_data=(cb_string_video).encode("UTF-8")
                 ),
                 InlineKeyboardButton(
-                    "DFile",
+                    "🗂️ DFile",
                     callback_data=(cb_string_file).encode("UTF-8")
                 )
             ])
@@ -235,46 +252,50 @@ async def echo(bot, update):
                 "video", format_id, format_ext)
             inline_keyboard.append([
                 InlineKeyboardButton(
-                    "video",
+                    "🎞️ video ",
                     callback_data=(cb_string_video).encode("UTF-8")
                 ),
                 InlineKeyboardButton(
-                    "file",
+                    "🗂️ file ",
                     callback_data=(cb_string_file).encode("UTF-8")
                 )
             ])
         reply_markup = InlineKeyboardMarkup(inline_keyboard)
-        await chk.delete(True)
+
         thumbnail = Config.DEF_THUMB_NAIL_VID_S
         thumbnail_image = Config.DEF_THUMB_NAIL_VID_S
-        if "thumbnail" in response_json:
-            if response_json["thumbnail"] is not None:
-                thumbnail = response_json["thumbnail"]
-                thumbnail_image = response_json["thumbnail"]
-        thumb_image_path = DownLoadFile(
-            thumbnail_image,
-            Config.DOWNLOAD_LOCATION + "/" +
-            str(update.from_user.id) + ".webp",
-            Config.CHUNK_SIZE,
-            None,  # bot,
-            Translation.DOWNLOAD_START,
-            update.message_id,
-            update.chat.id
-        )
-        if os.path.exists(thumb_image_path):
-            im = Image.open(thumb_image_path).convert("RGB")
-            im.save(thumb_image_path.replace(".webp", ".jpg"), "jpeg")
-        else:
-            thumb_image_path = None
+        thumb_image_path = Config.DOWNLOAD_LOCATION + "/" + str(update.from_user.id) + ".jpg"
+
+        if not os.path.exists(thumb_image_path):
+            mes = await thumb(update.from_user.id)
+            if mes != None:
+                m = await bot.get_messages(update.chat.id, mes.msg_id)
+                await m.download(file_name=thumb_image_path)
+                thumb_image_path = thumb_image_path
+            else:
+                if "thumbnail" in response_json:
+                    if response_json["thumbnail"] is not None:
+                        thumbnail = response_json["thumbnail"]
+                        thumbnail_image = response_json["thumbnail"]
+                thumb_image_path = DownLoadFile(
+                    thumbnail_image,
+                    Config.DOWNLOAD_LOCATION + "/" +
+                    str(update.from_user.id) + ".jpg",
+                    Config.CHUNK_SIZE,
+                    None,  # bot,
+                    Translation.DOWNLOAD_START,
+                    update.message_id,
+                    update.chat.id
+                )
+        await fmsg.delete()
         await bot.send_message(
             chat_id=update.chat.id,
-            text=Translation.FORMAT_SELECTION.format(thumbnail) + "\n" + Translation.SET_CUSTOM_USERNAME_PASSWORD,
+            text=Translation.FORMAT_SELECTION.format(thumbnail) + "\n\n" + Translation.SET_CUSTOM_USERNAME_PASSWORD,
             reply_markup=reply_markup,
             parse_mode="html",
             reply_to_message_id=update.message_id
         )
     else:
-        # fallback for nonnumeric port a.k.a seedbox.io
         inline_keyboard = []
         cb_string_file = "{}={}={}".format(
             "file", "LFO", "NONE")
@@ -282,16 +303,17 @@ async def echo(bot, update):
             "video", "OFL", "ENON")
         inline_keyboard.append([
             InlineKeyboardButton(
-                "SVideo",
+                "🎞️ SVideo ",
                 callback_data=(cb_string_video).encode("UTF-8")
             ),
             InlineKeyboardButton(
-                "DFile",
+                "🗂️ DFile ",
                 callback_data=(cb_string_file).encode("UTF-8")
             )
         ])
         reply_markup = InlineKeyboardMarkup(inline_keyboard)
-        await chk.delete(True)
+
+        await intmsg.delete()
         await bot.send_message(
             chat_id=update.chat.id,
             text=Translation.FORMAT_SELECTION.format(""),
@@ -299,4 +321,6 @@ async def echo(bot, update):
             parse_mode="html",
             reply_to_message_id=update.message_id
         )
-            
+
+
+                
