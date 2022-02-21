@@ -14,5 +14,4 @@ dnspython
 psutil
 pyrogram
 tgcrypto
-
-yt-dlp==2022.2.4
+yt-dlp -U
