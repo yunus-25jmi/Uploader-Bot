@@ -23,7 +23,7 @@ from .functions.ran_text import random_char
 from .functions.forcesub import handle_force_subscribe
 
 @Client.on_message(filters.private & filters.regex(pattern=".*https.*"))
-async def echo(url, cf_name, yt_dl_user_name, yt_dl_pass_word, user_working_dir):
+async def echo(url, cf_name, yt_dl_user_name, yt_dl_pass_word, user_working_dir, echo):
     command_to_exec = [
         "yt-dlp",
         "--no-warnings",
