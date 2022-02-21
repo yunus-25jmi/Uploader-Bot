@@ -92,7 +92,7 @@ async def echo(bot, update):
         command_to_exec.append("--password")
         command_to_exec.append(yt_dl_pass_word)
 
-    logger.info(command_to_exec)
+ 
     process = await asyncio.create_subprocess_exec(
         *command_to_exec,
         # stdout must a pipe to be accessible as process.stdout
