@@ -14,4 +14,4 @@ dnspython
 psutil
 pyrogram
 tgcrypto
-python3 -m pip install --force-reinstall https://github.com/yt-dlp/yt-dlp/archive/master.zip
+https://github.com/yt-dlp/yt-dlp/archive/master.zip
