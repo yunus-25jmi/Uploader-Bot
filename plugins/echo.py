@@ -92,7 +92,7 @@ async def echo(bot, update):
         command_to_exec.append("--password")
         command_to_exec.append(yt_dl_pass_word)
 
-    LOGGER.info(command_to_exec)
+    logger.info(command_to_exec)
     process = await asyncio.create_subprocess_exec(
         *command_to_exec,
         # stdout must a pipe to be accessible as process.stdout
@@ -102,7 +102,7 @@ async def echo(bot, update):
     # Wait for the subprocess to finish
     stdout, stderr = await process.communicate()
     e_response = stderr.decode().strip()
-    LOGGER.info(e_response)
+    logger.info(e_response)
     t_response = stdout.decode().strip()
     # LOGGER.info(t_response)
     # https://github.com/rg3/youtube-dl/issues/2630#issuecomment-38635239
